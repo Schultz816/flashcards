@@ -1,9 +1,7 @@
-// require fs
 var fs = require("fs");
 
 module.exports = ClozeFlashcard;
 
-// constructor for ClozeFlashcard
 function ClozeFlashcard(text, cloze) {
     this.text = text;
     this.cloze = cloze;
@@ -17,9 +15,8 @@ function ClozeFlashcard(text, cloze) {
         };
         // add card to log.txt
         fs.appendFile("log.txt", JSON.stringify(data) + ';', "utf8", function(error) {
-            // if there is an error, log the error
-            if (error) {
-                console.log(error);
+            if (err) {
+                console.log(err);
             }
         });
     };

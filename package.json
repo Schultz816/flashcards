@@ -1,0 +1,23 @@
+{
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "Homework 9",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Schultz816/flashcards.git"
+  },
+  "author": "Corey Schultz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Schultz816/flashcards/issues"
+  },
+  "homepage": "https://github.com/Schultz816/flashcards#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "inquirer": "^3.0.6"
+  }
+}

@@ -1,10 +1,9 @@
-// require basic flashcard module
-var BasicFlashcard = require('./basic-flashcard.js');
-// require cloze flashcard module
-var ClozeFlashcard = require('./cloze-flashcard.js');
-// require inquirer for getting user input at command line
+var BasicFlashcard = require('./basiccard.js');
+
+var ClozeFlashcard = require('./clozecard.js');
+
 var inquirer = require('inquirer');
-// require fs
+
 var fs = require('fs');
 
 inquirer.prompt([{
@@ -25,7 +24,7 @@ inquirer.prompt([{
 });
 
 var addCard = function() {
-    // get user input
+    
     inquirer.prompt([{
         name: 'cardType',
         message: 'What kind of flashcard would you like to create?',
@@ -35,7 +34,7 @@ var addCard = function() {
         }, {
             name: 'cloze-flashcard'
         }]
-    // once user input is received
+    
     }]).then(function(answer) {
         if (answer.cardType === 'basic-flashcard') {
             inquirer.prompt([{
@@ -105,7 +104,7 @@ var addCard = function() {
 };
 
 var whatsNext = function() {
-    // get user input
+    
     inquirer.prompt([{
         name: 'nextAction',
         message: 'What would you like to do next?',
@@ -117,7 +116,7 @@ var whatsNext = function() {
         }, {
             name: 'nothing'
         }]
-    // once user input is received
+    
     }]).then(function(answer) {
         if (answer.nextAction === 'create-new-card') {
             addCard();
@@ -130,9 +129,9 @@ var whatsNext = function() {
 };
 
 var showCards = function() {
-    // read the log.txt file
+    
     fs.readFile('./log.txt', 'utf8', function(error, data) {
-        //if there is an error, log it
+        
         if (error) {
             console.log('Error occurred: ' + error);
         }
